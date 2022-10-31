@@ -17,11 +17,9 @@ export class AuthRSAService {
     })
     
     const validPublicKey = publicKey.replace(
-      '-----BEGIN RSA PUBLIC KEY-----',
-      ''
+      '-----BEGIN RSA PUBLIC KEY-----', ''
     ).replace(
-      '-----END RSA PUBLIC KEY-----',
-      ''
+      '-----END RSA PUBLIC KEY-----', ''
     ).replaceAll('\n', '')
     
     return {
