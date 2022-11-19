@@ -17,10 +17,28 @@ model User {
   passwordHash String
   created      DateTime @default(now())
   updated      DateTime @updatedAt
+  posts        Post[]
 }
 
 model PrivateKey {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   privateKey String
   created    DateTime @default(now())
+}
+
+model Post {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  content  String
+  type     PostType
+  created  DateTime @default(now())
+  updated  DateTime @updatedAt
+  authorID String   @db.ObjectId
+  author   User     @relation(fields: [authorID], references: [id])
+}
+
+enum PostType {
+  URL
+  TEXT
+  IMAGE
 }
