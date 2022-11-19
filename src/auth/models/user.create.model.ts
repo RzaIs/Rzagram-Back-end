@@ -1,6 +1,5 @@
 import { IsEmail, IsNotEmpty } from "class-validator"
 
-
 export class UserCreateModel {
   @IsEmail()
   @IsNotEmpty() email: string

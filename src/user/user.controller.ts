@@ -1,5 +1,4 @@
 import { Controller, Get, Inject, Param, UseGuards } from '@nestjs/common'
-import { User } from '@prisma/client'
 import { GetUser } from 'src/auth/auth.decorators'
 import { AuthStrategy } from 'src/auth/auth.strategy'
 import { UserResponseModel } from './models/user.response.model'
